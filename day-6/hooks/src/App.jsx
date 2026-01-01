@@ -2,22 +2,19 @@ import React, { useState } from 'react'
 
 const App = () => {
 
-  const [num, setNum] = useState(0)
-  const [users, setUsers] = useState("Nikhil")
-  const [arr, setArr] = useState([10,20,30])
+  const [num, setNum] = useState({user:"raj",age:21})
 
 
-  function changeNum() {
-    setNum(num+1)
-    console.log(num);
-    setUsers("Nikhil rai")
-    setArr([0,20])
+  const btnClicked=() => {
+    const newNum = {...num}
+    newNum.user="Nikhil"
+    setNum(newNum)
   }
 
   return (
     <div>
-      <h1>The num is {num} <br /> and user is {users} <br /> and {arr} </h1>
-      <button onClick={changeNum} >Click</button>
+      <h1>The num is {num} <br /> and user is {num.user} <br /> and {num.age} </h1>
+      <button onClick={btnClicked} >Click</button>
 
     </div>
   )
